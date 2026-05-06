@@ -1,0 +1,12 @@
+{
+  "name": "tp-3-pemd",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "docker compose up",
+    "start:frontend": "docker compose up frontend",
+    "start:backend": "docker compose up backend",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "build:backend": "cd backend && npm install"
+  }
+}

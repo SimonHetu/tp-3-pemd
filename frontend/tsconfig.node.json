@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "moduleResolution": "node16",
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "composite": true
+  },
+  "include": ["vite.config.ts"]
+}
