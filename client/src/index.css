@@ -1,0 +1,354 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a2438, #0b1220 45%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+.star-counter {
+  min-width: 8rem;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(250, 204, 21, 0.24);
+  text-align: right;
+}
+
+.star-counter > span {
+  display: block;
+  color: #facc15;
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.star-counter strong {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  color: #f8fafc;
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+.star-counter strong span {
+  color: #facc15;
+  font-size: 1.35rem;
+}
+
+.quiz-area {
+  margin-bottom: 1.75rem;
+}
+
+.category-selector {
+  display: flex;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+}
+
+.category-selector button {
+  flex: 0 0 auto;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.category-selector button:hover {
+  background: #1e293b;
+  border-color: rgba(96, 165, 250, 0.45);
+}
+
+.category-selector button.active {
+  background: #1e3a8a;
+  border-color: rgba(125, 211, 252, 0.55);
+  color: #f8fafc;
+}
+
+.question-card,
+.empty-state {
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.question-header {
+  margin-bottom: 1rem;
+}
+
+.question-header div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.question-header strong {
+  color: #38bdf8;
+}
+
+.question-header span {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+}
+
+.question-header p {
+  margin: 0;
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.choices {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.choice {
+  padding: 1rem 1.25rem;
+  border-radius: 0.9rem;
+  border: 1px solid #334155;
+  background: #111827;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  text-align: left;
+}
+
+.choice:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #60a5fa;
+}
+
+.choice.correct {
+  background: #0f172a;
+  border-color: #16a34a;
+}
+
+.choice.incorrect {
+  background: #1f2937;
+  border-color: #dc2626;
+}
+
+.choice:disabled {
+  cursor: not-allowed;
+}
+
+.answer-feedback {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.correct-text {
+  color: #5eead4;
+  margin: 0;
+}
+
+.incorrect-text {
+  color: #fb7185;
+  margin: 0;
+}
+
+.wiki-link,
+.next-button,
+.save-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 0.85rem;
+  background: #3b82f6;
+  color: white;
+  padding: 0.9rem 1.2rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.next-button:disabled,
+.save-button:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.wiki-link {
+  background: #1e3a8a;
+  border: 1px solid rgba(125, 211, 252, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(14, 165, 233, 0.12);
+}
+
+.save-button {
+  background: #0f766e;
+}
+
+button:hover,
+.wiki-link:hover {
+  background: #2563eb;
+}
+
+.save-button:hover:not(:disabled) {
+  background: #0d9488;
+}
+
+.error {
+  color: #f97316;
+  margin-top: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+}
+
+.empty-state button {
+  margin-top: 1rem;
+}
+
+.saved-facts {
+  margin-bottom: 1.75rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.section-heading span {
+  min-width: 2.25rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: #111827;
+  color: #facc15;
+  text-align: center;
+}
+
+.saved-facts ul {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.saved-facts li {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.saved-facts li div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.saved-facts strong {
+  color: #5eead4;
+}
+
+.saved-facts span,
+.muted {
+  color: #94a3b8;
+}
+
+.saved-facts p {
+  margin: 0.7rem 0;
+  line-height: 1.55;
+}
+
+.saved-facts a {
+  display: inline-flex;
+  width: fit-content;
+  margin-right: 0.75rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 0.65rem;
+  background: rgba(30, 58, 138, 0.72);
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  color: #bae6fd;
+  text-decoration: none;
+}
+
+.saved-facts a:hover {
+  background: #1d4ed8;
+}
+
+.delete-button {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.65rem;
+  background: rgba(51, 65, 85, 0.72);
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+.delete-button:hover:not(:disabled) {
+  background: #475569;
+}
+
+.delete-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+@media (max-width: 560px) {
+  .app-shell {
+    padding: 1rem;
+  }
+
+  .star-counter {
+    width: 100%;
+    text-align: left;
+  }
+}

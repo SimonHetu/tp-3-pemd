@@ -1,12 +1,11 @@
 {
-  "name": "tp-3-pemd",
+  "name": "trivia-lu",
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "docker compose up",
-    "start:frontend": "docker compose up frontend",
-    "start:backend": "docker compose up backend",
-    "build:frontend": "cd frontend && npm install && npm run build",
-    "build:backend": "cd backend && npm install"
+    "dev": "docker compose up --build",
+    "prod": "docker compose -f docker-compose.prod.yml up --build",
+    "build:client": "cd client && npm install && npm run build",
+    "build:api": "cd api && npm install"
   }
 }
