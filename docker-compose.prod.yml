@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_ROOT_PASSWORD: example
     volumes:
       - database_data:/data/db
 
@@ -14,7 +14,7 @@ services:
     command: npm run start
     environment:
       PORT: 4000
-      MONGO_URL: mongodb://root:admin@database:27017/trivia?authSource=admin
+      MONGO_URL: mongodb://root:example@database:27017/trivia?authSource=admin
     depends_on:
       - database
 

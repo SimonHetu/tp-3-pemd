@@ -312,9 +312,9 @@ function App() {
     <main className="app-shell">
       <header>
         <div>
-          <h1>Triviaru</h1>
+          <h1>Trivium Trivialities </h1>
           <p>
-            Answer endless trivia questions and learn more about it.
+            Answer endless trivia questions and learn more about their answers and subjects.
           </p>
         </div>
         <div className="star-counter" aria-label={`${stars} stars earned`}>
